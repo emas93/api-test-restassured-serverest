@@ -34,6 +34,7 @@ class UsuariosTest extends BaseTest {
     }
     @Test
     @Story("Usuário inexistente")
+    @Tag("bug")
     @Severity(SeverityLevel.NORMAL)
     @Description("Recurso inexistente deveria retornar 404, mas a API retorna 400.")
     @DisplayName("[BUG] GET /usuarios/{id} inexistente deveria retornar 404")

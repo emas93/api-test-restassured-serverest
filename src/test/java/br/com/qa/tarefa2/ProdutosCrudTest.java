@@ -63,6 +63,7 @@ class ProdutosCrudTest extends BaseTest {
     }
 
     @Test
+    @Tag("bug")
     @Story("GET")
     @DisplayName("[BUG] GET /produtos/{id} inexistente - 404")
     void buscarProdutoInexistente() {

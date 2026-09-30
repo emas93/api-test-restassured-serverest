@@ -19,7 +19,6 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Story("Login")
-    @Feature("Login Básico")
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[+] POST /login com credenciais válidas - deve retornar 200 e token")
     void loginValido() {

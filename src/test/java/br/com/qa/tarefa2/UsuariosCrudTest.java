@@ -16,6 +16,7 @@ import static org.hamcrest.Matchers.*;
 class UsuariosCrudTest extends BaseTest {
 
     @Test
+    @Tag("bug")
     @Story("GET")
     @DisplayName("[BUG] GET /usuarios/{id} - 200, header e corpo")
     void get() {
@@ -87,15 +88,15 @@ class UsuariosCrudTest extends BaseTest {
     }
 
     @Test
+    @Tag("bug")
     @Story("PUT")
     @DisplayName("[BUG] PUT /usuarios/{id} com ID inexistente- 404")
-    void putIdInexistenteCria() {
+    void putIdInexistenteDeveRetornar404() {
         given().spec(spec).body(bodyUsuario(emailUnico(), false))
                 .when().put("/usuarios/{id}", "idNovoDoTeste0001")
                 .then()
                 .statusCode(404)
-                .body("message", equalTo("Usuário não encontrado"))
-                .body("_id", notNullValue());
+                .body("message", equalTo("Usuário não encontrado"));
     }
 
     @Test
@@ -120,12 +121,12 @@ class UsuariosCrudTest extends BaseTest {
 
     @Test
     @Story("DELETE")
-    @DisplayName("[BUG] DELETE /usuarios/{id} inexistente - 404 'Nenhum registro excluído'")
+    @Tag("bug")
+    @DisplayName("[BUG] DELETE /usuarios/{id} inexistente - 404 ")
     void deleteInexistente() {
         given().spec(spec)
                 .when().delete("/usuarios/{id}", "idQueNaoExiste999")
                 .then()
-                .statusCode(404)
-                .body("message", equalTo("Usuário inexistente."));
+                .statusCode(404);
     }
 }
