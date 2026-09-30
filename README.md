@@ -3,7 +3,11 @@
 Automação de testes de API REST com **Rest Assured**, **JUnit 5** e **Allure Report**, usando a API pública [ServeRest](https://serverest.dev) como alvo.
 
 Os testes validam **status code, headers e corpo** das respostas em cenários positivos e negativos, cobrindo os métodos **GET, POST, PUT e DELETE** nos recursos `/login`, `/usuarios` e `/produtos`.
+[![Testes de API e relatório Allure](https://github.com/emas93/api-test-restassured-serverest/actions/workflows/relatorio.yml/badge.svg)](https://github.com/emas93/api-test-restassured-serverest/actions/workflows/relatorio.yml)
 
+**Relatório online:** https://emas93.github.io/api-test-restassured-serverest/
+
+**Relatório online:** https://emas93.github.io/api-test-restassured-serverest/
 ## Tecnologias
 
 | Ferramenta | Versão | Uso |
