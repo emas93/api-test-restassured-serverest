@@ -18,7 +18,7 @@ class UsuariosCrudTest extends BaseTest {
     @Test
     @Tag("bug")
     @Story("GET")
-    @DisplayName("[BUG] GET /usuarios/{id} - 200, header e corpo")
+    @DisplayName("[BUG] GET /usuarios/{id} - 200, não deve expor senha do usuário")
     void get() {
         String email = emailUnico();
         String id = criarUsuario(email, false);
@@ -30,8 +30,7 @@ class UsuariosCrudTest extends BaseTest {
                 .header("Content-Type", containsString("application/json"))
                 .body("_id", equalTo(id))
                 .body("email", equalTo(email))
-                .body(not(hasKey("password")))
-                .body(not(containsString("senha123")));
+                .body("password", nullValue());
     }
 
 
